@@ -236,7 +236,7 @@ def ra(a, b):
 
 
 def ajax(challenge):
-    rand0= int(6 * random())
+    rand0 = int(6 * random())
     rand1 = int(300 * random())
     f = md5(str(rand0))[0: 9]
     g = md5(str(rand1))[10: 19]

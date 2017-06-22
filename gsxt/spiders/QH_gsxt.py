@@ -74,7 +74,7 @@ class QH_gsxtSpider(scrapy.Spider):
                 name = line.strip()
                 meta = {
                     'name': name,
-                    # 'autoproxy': True,
+                    'autoproxy': True,
                 }
                 # 请求获取challenge,gt
                 yield Request(
@@ -131,7 +131,7 @@ class QH_gsxtSpider(scrapy.Spider):
         self.logger.info('validate_sec name:' + meta['name'])
         try:
             data = json.loads(response.body)
-            # print 'data', data
+
             if data['success']:
                 yield Request(
                     url=self.host_url + data['obj'] + '&' + urlencode({
@@ -194,7 +194,6 @@ class QH_gsxtSpider(scrapy.Spider):
                             errback=self.retry,
                             priority=20,
                             headers=headers,
-                            dont_filter=True,
                         )
 
                         # 基础信息
@@ -206,7 +205,6 @@ class QH_gsxtSpider(scrapy.Spider):
                             callback=self.save_content,
                             meta=meta,
                             errback=self.retry,
-                            dont_filter=True,
                             priority=20,
                             headers=headers
                         )
@@ -220,7 +218,6 @@ class QH_gsxtSpider(scrapy.Spider):
                             callback=self.save_content,
                             meta=meta,
                             errback=self.retry,
-                            dont_filter=True,
                             priority=20,
                             headers=headers
                         )
@@ -281,6 +278,7 @@ class QH_gsxtSpider(scrapy.Spider):
         if retry_time_count < max_retry_time:
             meta.update({
                 'retry_time_count': retry_time_count + 1,
+                'change_proxy': True,
             })
 
             self.logger.info('man_retry name:{} retry_time_count:{}'.
@@ -311,6 +309,7 @@ class QH_gsxtSpider(scrapy.Spider):
         if retry_time_count < max_retry_time:
             meta.update({
                 'retry_time_count': retry_time_count + 1,
+                'change_proxy': True,
             })
 
             self.logger.info('retry name:{} retry_time_count:{}'.
