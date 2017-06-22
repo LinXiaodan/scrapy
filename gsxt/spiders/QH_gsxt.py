@@ -1,23 +1,19 @@
 # -*- coding: utf-8 -*-
-import scrapy
-import json
-import time
-from copy import deepcopy
-import re
-from urllib import urlencode
-from scrapy import FormRequest, Request
-import random
-
-from twisted.internet import defer, reactor
-from twisted import internet as myinternet
-
-import slide_method, slide_offline
-from pyquery import PyQuery
-from gsxt.items import GsxtItem
-from bs4 import BeautifulSoup
 import datetime
-import yaml
+import json
 import os
+import re
+import time
+import yaml
+from copy import deepcopy
+from urllib import urlencode
+
+import scrapy
+from bs4 import BeautifulSoup
+from scrapy import FormRequest, Request
+
+import slide_offline
+from gsxt.items import GsxtItem
 
 
 class QH_gsxtSpider(scrapy.Spider):
@@ -224,7 +220,6 @@ class QH_gsxtSpider(scrapy.Spider):
 
             else:
                 self.logger.info('list error name:'+meta['name'])
-                # print response.body
                 yield self.man_retry(response)
 
         except Exception as e:
