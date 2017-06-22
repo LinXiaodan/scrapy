@@ -10,14 +10,14 @@ import scrapy
 
 class GsxtItem(scrapy.Item):
     # define the fields for your item here like:
-    cname = scrapy.Field()#公司名
-    status = scrapy.Field()#状态
-    ccode = scrapy.Field()#统一社会信用代码
-    lawuser = scrapy.Field()#法定代表人
-    etime = scrapy.Field()#成立日期
-    zhizhao = scrapy.Field()#营业执照信息
+    content = scrapy.Field()
+    url = scrapy.Field()
+    path = scrapy.Field()
 
-    pass
-
-class testItem(scrapy.Item):
-    a = scrapy.Field()
+    @classmethod
+    def get_result_from_response(cls, response):
+        result = GsxtItem(
+            content=response.body,
+            url=response.url
+        )
+        return result
