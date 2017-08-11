@@ -1,6 +1,0 @@
-- repo: https://github.com/pre-commit/mirrors-pylint.git
-  sha: 'v1.7.1'
-  hooks:
-    - id: pylint
-      entry: ./venv/bin/pylint
-      args: [--rcfile, pylintrc, -E]

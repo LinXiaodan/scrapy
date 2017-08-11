@@ -1,0 +1,490 @@
+治多县中国油品 中国石化销售有限公司青海石油分公司黄南中心加油站
+<script type="text/javascript">
+    var fromTop = $("#fengetu").offset().top; // 获取div(fengetu)距离顶部的初始距离
+    var fengetu =document.getElementById("fengetu");// 获取div(fengetu)对象元素
+    var baseWidth = $(".base").width();// 获取div(base)宽度
+    var guidedivallWidth = $(".guidedivall").width() + 5;// 获取div(guidedivall)宽度
+    window.onscroll = function() { // js监听滚动条事件
+        var hideLen =document.documentElement.scrollTop || document.body.scrollTop;// 获取滚动条滚动时页面被卷起的长度--变量
+        if( hideLen > fromTop) { // 当div(fengetu)拖动到距离顶部时，不随滚动条滚动
+            fengetu.style.position="fixed";
+            fengetu.style.top="0";
+            fengetu.style.width = guidedivallWidth +"px";
+        }else{ // 恢复正常
+            fengetu.style.position="relative";
+            fengetu.style.width="100.5%";
+        }
+    }
+
+  /*   $(function() {
+        var id = "06EDEA5BFDA80E5387C6D1656D80F2DE";
+        $.get("/yearReport/index/datafordetail.jspx?id="+id+"&date="+new Date(), function(data) {
+            $("#qiyenianbaoxinxi").html(data);
+        });
+    }); */
+
+    function goToAltInfoPage(){
+        var mainId = document.getElementById("uuId").value;
+        window.open("/business/getInvAltInfo.jspx?id=" + mainId);
+    }
+
+    // 变更前后信息添加展开功能
+    var alterBeforeArr; // 存储变更前内容数组
+    var alterAfterArr;  // 存储变更后内容数组
+         doExpand_alterInfo();
+
+</script>
+<style type="text/css">
+#yearreportTableTitle {
+	display: inline-block;
+	width: 200px;
+	font-family: fantasy;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 12px;
+	border: 1px solid #CCCCCC;
+
+}
+
+#yearreportTableTitleblock {
+	display: inline-block;
+	width: 5px;
+	height: 15px;
+	background-color: #014083;
+	vertical-align: middle;
+}
+
+#yearreportTableTitlefont {
+	display: inline-block;
+	width: 150px;
+	font-size: 16px;
+	margin-left: 6px;
+	color: #045487;
+}
+
+#yearreporList {
+	width: 100%;
+	border-collapse: collapse;
+	background-color:#F5F5F5;
+}
+
+#yearreporList  th {
+	height: 40px;
+	background-color: #EAE3DB;
+	font-size: 15px;
+	color: #9B7D46;
+	border: 1px solid #DBE4EB;
+}
+
+#yearreporList  td {
+	border: 1px solid #DBE4EB;
+	text-align: center;
+	height: 40px;
+	font-size: 14px;
+	color:#666666;
+}
+ #yearreportTable a {
+  color: #FF8204;
+}
+</style>
+
+<!--营业执照信息-->
+<div class="baseinfo">
+   <div class="mainPerTextImg"></div>
+   <p class="text mainPerText3"><span>营业执照信息</span></p>
+   <div id="zhizhao"  class="ax_table liebiaoxinxin" style="margin-top:-6px;margin-left:22px;">
+
+
+          <table class="xinxi" style="width:96%;">
+           <tr>
+               <td style="text-align:left;width:58.5%">
+                   ·&nbsp;注册号&nbsp;：<span>632300009002118</span>
+               </td>
+               <td style="text-align:left;width:41.5%">·&nbsp;企业名称&nbsp;：<span>中国石化销售有限公司青海石油分公司黄南中心加油站</span></td>
+           </tr>
+           <tr>
+               <td style="text-align:left;">·&nbsp;类型&nbsp;：  <span>股份有限公司分公司(上市、国有控股)</span> </td>
+               <td style="text-align:left;">·&nbsp;负责人&nbsp;：<span>李峰</span></td>
+           </tr>
+            <tr>
+               <td style="text-align:left;">·&nbsp;营业期限自&nbsp;：<span>2011年05月10日 </span></td>
+               <td style="text-align:left;">·&nbsp;营业期限至&nbsp;：<span>2199年01月01日</span></td>
+           </tr>
+           <tr>
+               <td style="text-align:left;">·&nbsp;登记机关&nbsp;：<span>黄南藏族自治州市场监督管理局</span></td>
+               <td style="text-align:left;">·&nbsp;成立日期&nbsp;：<span>2011年05月10日 </span></td>
+           </tr>
+
+           <tr>
+               <td style="text-align:left;">·&nbsp;登记状态&nbsp;：<span>注销</span></td>
+               <td style="text-align:left;">·&nbsp;核准日期&nbsp;：<span>2015年08月20日 </span></td>
+           </tr>
+           <tr>
+               <td style="text-align:left;" colspan="2">·&nbsp;营业场所&nbsp;：<span>青海省黄南州同仁县北出口</span></td>
+           </tr>
+           <tr>
+               <td style="text-align:left;" colspan="2">
+                  <div style="margin-top:5px;">
+                      <div class="jingyingfanweiHead">·&nbsp;</div>
+                      <div class="jingyingfanwei">经营范围&nbsp;：<span>汽油、柴油、润滑油销售（以上项目凭前置许可有效期限经营）***。</span></div>
+                  </div>
+               </td>
+           </tr>
+       </table>
+    </div>
+</div>
+
+
+
+<!--股东出资-->
+  <br>  <br>
+
+<!--主要人员-->
+
+<!--分支机构-->
+
+<!--清算信息-->
+
+ <!--变更信息-->
+<div class="baseinfo" id="bgxx">
+<div class="mainPerTextImg"></div><p class="text mainPerText"><span>变更信息</span></p>
+
+    <div id="altDiv2">
+        <div class="ax_table liebiaoxinxin">
+            <table cellpadding="0" cellspacing="0" class="detailsList">
+                <tr>
+                    <th width="5%">序号</th>
+                    <th width="14%">变更事项</th>
+                    <th width="33%">变更前内容</th>
+                    <th width="27%">变更后内容</th>
+                    <th width="21%">变更日期</th>
+                </tr>
+            </table>
+        <div id="altDiv">
+            <table cellspacing="0" cellpadding="0" class="detailsList" id="alterInfo">
+                        <tr>
+                            <td width="5%">1</td>
+                            <td width="14%">其他事项备案变更</td>
+                            <td width="33%">汽油、柴油、润滑油；预包装食品销售（以上项目凭前置许可有效期限经营）***。</td>
+                            <td width="27%">汽油、柴油、润滑油销售（以上项目凭前置许可有效期限经营）***。</td>
+                            <td width="21%">2014年06月23日</td>
+                        </tr>
+                        <tr>
+                            <td width="5%">2</td>
+                            <td width="14%">其他事项备案变更</td>
+                            <td width="33%">陈鸿飞</td>
+                            <td width="27%">李峰</td>
+                            <td width="21%">2014年06月23日</td>
+                        </tr>
+                        <tr>
+                            <td width="5%">3</td>
+                            <td width="14%">其他事项备案变更</td>
+                            <td width="33%">中国石油化工股份有限公司青海石油分公司黄南中心加油站</td>
+                            <td width="27%">中国石化销售有限公司青海石油分公司黄南中心加油站</td>
+                            <td width="21%">2014年06月23日</td>
+                        </tr>
+            </table>
+       </div>
+    </div>
+        <div class="ax_image fenye">
+           <ul>
+                 <li>共查询到&nbsp;3&nbsp;条信息&nbsp;&nbsp;</li>
+                 <li>共&nbsp;1&nbsp;页</li>
+                 <li>
+                  <a 
+                      >首页</a>
+                 </li>
+                 <li>
+                  <a >
+                     <img class="imgfenye" src="\images\left.png"/>&nbsp;上一页</a>
+                 </li>
+                           <li><a   class="fenye-bj" style="color:#FFFFFF;">1</a></li>
+
+              <li>
+                  <a >下一页&nbsp;<img class="imgfenye" src="\images\right.png"/></a></li>
+
+              <li>
+              <a 
+                      >末页</a></li>
+              </ul>
+        </div>
+     
+     </div>
+</div>
+
+ <!--动产抵押-->
+<div class="baseinfo">
+
+ <div class="mainPerTextImg"></div><p class="text mainPerText"><span>动产抵押登记信息&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></p>
+        <div id="mortDiv2" style="margin-top:10px;">
+           <div   class="ax_table liebiaoxinxin">
+               <table cellspacing="0" cellpadding="0" class="detailsList" id="touziren">
+                   <tr>
+                       <th width="5%">序号</th>
+                       <th width="15%">登记编号</th>
+                       <th width="14%">登记日期</th>
+                       <th width="24%">登记机关</th>
+                       <th width="16%">被担保债权数额</th>
+                       <th width="7%">状态</th>
+                       <th width="12%">公示日期</th>
+                       <th width="7%">详情</th>
+                   </tr>
+               </table>
+               <table cellpadding="0" cellspacing="0" class="detailsList">
+                      <tr><td colspan="8">暂无动产抵押登记信息</td></tr>
+               </table>
+       </div>
+<br> 
+   </div>
+</div>
+
+ <!--股权出质-->
+
+<!--知识产权  工商公示-->
+<div class="baseinfo">
+<div class="mainPerTextImg"></div><p class="text mainPerText"><span>知识产权出质登记信息</span></p>
+    <div id="intellectualPropertyGS">
+       <div class="ax_table liebiaoxinxin">
+           <table cellspacing="0" cellpadding="0" class="detailsList">
+               <tr>
+                   <th width="5%">序号</th>
+                   <th width="18%">知识产权登记证号</th>
+                   <th width="9%">名称</th>
+                   <th width="5%">种类</th>
+                   <th width="9%">出质人名称</th>
+                   <th width="9%">质权人名称</th>
+                   <th width="23%">质权登记期限</th>
+                   <th width="5%">状态</th>
+                   <th width="12%">公示日期</th>
+                   <th width="5%">详情</th>
+               </tr>
+           </table>
+           <table cellpadding="0" cellspacing="0" class="detailsList">
+                      <tr><td colspan="10">暂无知识产权出质登记信息</td></tr>
+             </table>
+        </div>
+<br> 
+</div>
+</div>
+
+<!--商标注册-->
+<div class="baseinfo" style="padding-bottom:12px;">
+    <div class="mainPerTextImg"></div>
+    <p class="text mainPerText">
+        <span>商标注册信息</span>
+        <span style="float:right;margin-right:31px;">
+            
+        </span>
+    </p>
+
+<div class="noData2"><div>暂无商标注册信息</div></div>
+</div>
+
+<!--抽查检查-->
+<div class="baseinfo">
+    <div class="mainPerTextImg"></div><p class="text mainPerText"><span>抽查检查结果信息&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></p>
+           <div id="spotCheck2">
+              <div class="ax_table liebiaoxinxin">
+                  <table cellpadding="0" cellspacing="0" class="detailsList">
+                      <tr>
+                          <th width="5%">序号</th>
+                          <th width="27%">检查实施机关</th>
+                          <th width="7%">类型</th>
+                          <th width="13%">日期</th>
+                          <th width="38%">结果</th>
+                      </tr>
+                  </table>
+                  <table cellpadding="0" cellspacing="0" class="detailsList">
+                         <tr><td colspan="5">暂无抽查检查结果信息</td></tr>
+                </table>
+              </div>
+<br> 
+    </div>
+</div>
+
+
+ <!--司法协助-->
+
+<div id = "fengetu" class = "fengetu">
+    <div class="fengetu_msg">
+        <p><span>以下信息由该企业提供，企业对其报送信息的真实性、合法性负责</span></p>
+    </div>
+</div>
+
+
+ <!--企业年报信息  -->
+<div class="baseinfo">
+<div class="mainPerTextImg"></div><p class="text mainPerText"><span>企业年报信息&nbsp;</span></p>
+<div  id="qiyenianbaoxinxi" class="ax_table liebiaoxinxin"> 
+
+	<div id="yearreportTable">
+		<table id="yearreporList">
+			<tr>
+				<th>序号</th>
+				<th>报送年度</th>
+				<!-- <th>最后修改日期</th>
+				<th>状态</th> -->
+				<th>公示日期</th>
+				<th>详情</th>
+			</tr>
+					<tr>
+						<td>1</td>
+						<td>2014年度报告</td>
+						<td>2015年05月21日</td>
+						<td><a href="/QYNBXX.jspx?yearId=2c9f8ca44d64727e014d7712568e5681&id=06EDEA5BFDA80E5387C6D1656D80F2DE" target="_blank">查看</a></td>
+						</tr>
+					<tr>
+						<td>2</td>
+						<td>2013年度报告</td>
+						<td>2015年05月21日</td>
+						<td><a href="/QYNBXX.jspx?yearId=2c9f8ca44d64727e014d77109834567f&id=06EDEA5BFDA80E5387C6D1656D80F2DE" target="_blank">查看</a></td>
+						</tr>
+		</table>
+
+	</div>
+
+</div>
+</div>
+
+<br/>
+<br/>
+    <!--股东及投资信息-->
+
+
+    <!--股权变更信息-->
+
+<!--行政许可-->
+<div class="baseinfo">
+
+ <div class="mainPerTextImg"></div><p class="text mainPerText"><span>行政许可信息</span></p>
+        <div>
+           <div class="ax_table liebiaoxinxin">
+               <table cellspacing="0" cellpadding="0" class="detailsList">
+                   <tr>
+                       <th width="49px" style="text-align:center;">序号</th>
+                       <th width="140px" style="text-align:center;">许可文件编号</th>
+                       <th width="142px" style="text-align:center;">许可文件名称</th>
+                       <th width="124px" style="text-align:center;">有效期自</th>
+                       <th width="124px" style="text-align:center;">有效期至</th>
+                       <th width="186px" style="text-align:center;">许可机关</th>
+                       <th width="161px" style="text-align:center;">许可内容</th>
+                       <th width="69px" style="text-align:center;">状态</th>
+                       <th width="63px" style="text-align:center;">详情</th>
+                   </tr>
+               </table>
+               <table cellpadding="0" cellspacing="0" class="detailsList" id="xzxkListTable">
+                       <tr>
+                           <td width="49px" style="text-align:center;">1</td>
+                           <td width="140px" style="text-align:center;">63230000902118</td>
+                           <td width="142px" style="text-align:center;">营业执照</td>
+                           <td width="124px" style="text-align:center;">2011年05月10日</td>
+                           <td width="124px" style="text-align:center;">2018年12月31日</td>
+                           <td width="186px" style="text-align:center;">黄南州工商管理局</td>
+                           <td width="161px" style="text-align:center;">汽油、柴油、润滑油、</td>
+                           <td width="69px" style="text-align:center;">
+                                   有效
+                           </td>
+                           <td width="63px" style="text-align:center;">
+                                   无
+                           </td>
+                       </tr>
+                       <tr>
+                           <td width="49px" style="text-align:center;">2</td>
+                           <td width="140px" style="text-align:center;">63036103</td>
+                           <td width="142px" style="text-align:center;">成品油零售经营批准证书</td>
+                           <td width="124px" style="text-align:center;">2010年03月01日</td>
+                           <td width="124px" style="text-align:center;">2015年06月01日</td>
+                           <td width="186px" style="text-align:center;">青海省商务厅</td>
+                           <td width="161px" style="text-align:center;">汽油、柴油、煤油</td>
+                           <td width="69px" style="text-align:center;">
+                                   有效
+                           </td>
+                           <td width="63px" style="text-align:center;">
+                                   无
+                           </td>
+                       </tr>
+               </table>
+       </div>
+
+         <div   class="ax_image fenye">
+             <ul id="xzxkPage">
+                  <li>共查询到&nbsp;2&nbsp;条信息&nbsp;&nbsp;</li>
+                  <li>共&nbsp;1&nbsp;页</li>
+                  <li>
+                   <a  disabled="disabled"
+                          >首页</a>
+                  </li>
+                  <li>
+                   <a  disabled="disabled">
+                        <img class="imgfenye" src="\images\left.png"/>&nbsp;上一页</a>
+                  </li>
+                           <li><a   class="fenye-bj" style="color:#FFFFFF;">1</a></li>
+               <li>
+                    <a disabled="disabled" >下一页&nbsp;
+                   <img class="imgfenye" src="\images\right.png"/></a></li>
+               <li>
+               <a  disabled="disabled" >末页</a></li>
+               </ul>
+           <div class="text">
+             <p><span></span></p>
+           </div>
+            <input type="hidden" id="xzxkid" value="163000000019528675"/>
+         </div>
+   </div>
+</div>
+
+<!--知识产权-->
+<div class="baseinfo">
+
+ <div class="mainPerTextImg"></div><p class="text mainPerText"><span>知识产权出质登记信息</span></p>
+        <div>
+           <div class="ax_table liebiaoxinxin">
+               <table cellspacing="0" cellpadding="0" class="detailsList">
+                   <tr>
+                       <th width="44px" style="text-align:center;">序号</th>
+                       <th width="192px" style="text-align:center;">知识产权登记证号</th>
+                       <th width="95px" style="text-align:center;">名称</th>
+                       <th width="65px" style="text-align:center;">种类</th>
+                       <th width="97px" style="text-align:center;">出质人名称</th>
+                       <th width="90px" style="text-align:center;">质权人名称</th>
+                       <th width="240px" style="text-align:center;">质权登记期限</th>
+                       <th width="50px" style="text-align:center;">状态</th>
+                       <th width="125px" style="text-align:center;">公示日期</th>
+                       <th width="51px" style="text-align:center;">详情</th>
+                   </tr>
+               </table>
+               <table cellpadding="0" cellspacing="0" class="detailsList" id="zscqListtable">
+                       <tr><td colspan="10">暂无知识产权出质登记信息</td></tr>
+               </table>
+       </div>
+   </div>
+</div>
+
+
+<!--行政处罚信息 -->
+<div class="baseinfo">
+<div class="mainPerTextImg"></div><p class="text mainPerText"><span>行政处罚信息&nbsp;</span></p>
+<div id="xingzhengchufa"  class="ax_table liebiaoxinxin">
+   <table cellpadding="0" cellspacing="0" class="detailsList">
+                <tr width="100%">
+                    <th width="5%"  style="text-align:center;">序号</th>
+                    <th width="15%" style="text-align:center;">决定书文号</th>
+                    <th width="16%" style="text-align:center;">违法行为类型</th>
+                    <th width="16%" style="text-align:center;">行政处罚内容</th>
+                    <th width="17%" style="text-align:center;">决定机关名称</th>
+                    <th width="12%" style="text-align:center;">处罚决定日期</th>
+                    <th width="12%" style="text-align:center;">公示日期</th>
+                    <th width="7%" style="text-align:center;">备注</th>
+                </tr>
+            </table>
+         <div class="">
+            <table cellspacing="0" cellpadding="0" class="detailsList" id="punTab2">
+                  <tr><td colspan="0">暂无行政处罚信息</td></tr>
+          </table>
+        </div>
+
+    </div>
+  </div>
+
+
+<!--企业简易注销公告信息 -->

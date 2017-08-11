@@ -74,7 +74,6 @@ class ASpider(scrapy.Spider):
                 'Referer': 'http://www.gsxt.gov.cn/index.html',
             })
             yield Request(
-                method='GET',
                 meta={
                     'gt': gt,
                     'challenge': data['challenge'],
@@ -102,7 +101,6 @@ class ASpider(scrapy.Spider):
                     'Referer': 'http://www.gsxt.gov.cn/index.html',
                 })
                 yield Request(
-                    method='GET',
                     meta=response.meta,
                     url=self.slideGet_url + urlencode({
                         'gt': gt,
@@ -203,6 +201,7 @@ class ASpider(scrapy.Spider):
             trail = data['trail']
             gt = response.meta['gt']
             challenge = response.meta['challenge']
+            self.logger.info('challenge:{}'.format(challenge))
             userresponse = slide_method.get_userresponse(target_pos, challenge)
             passtime = trail[-1][-1]
             imgload = random.randint(10, 100)
@@ -282,6 +281,7 @@ class ASpider(scrapy.Spider):
                     headers=recent_headers
                 )
             else:
+                # 离线
                 print 'failed to getcontent! success = 0'
                 message = data['message']
                 print 'message : ' + message
@@ -305,28 +305,29 @@ class ASpider(scrapy.Spider):
                 '该搜索名能够得到公司信息'
                 print '成功搜索到公司'
                 # 跳转到该公司对应的页面获取详情
-                for i in p('div.main-layout a.search_list_item').items():
-                    href = self.detail_url + i.attr('href')
-                    a = PyQuery(i)
-                    meta.update({'company_name': ''.join(a('h1').text().split())})
-                    yield Request(
-                        method='GET',
-                        meta=meta,
-                        url=href,
-                        callback=self.parse_detail,
-                        dont_filter=True,
-                    )
+                # for i in p('div.main-layout a.search_list_item').items():
+                #     href = self.detail_url + i.attr('href')
+                #     a = PyQuery(i)
+                #     meta.update({'company_name': ''.join(a('h1').text().split())})
+                #     yield Request(
+                #         method='GET',
+                #         meta=meta,
+                #         url=href,
+                #         callback=self.parse_detail,
+                #         dont_filter=True,
+                #     )
 
                 # 保存公司简略信息
                 for content in p('div.main-layout a.search_list_item').items():
                     item = GsxtItem()
                     a = PyQuery(content)
-                    item['cname'] = ''.join(a('h1').text().split())
-                    item['status'] = a('div.wrap-corpStatus span').text()
-                    item['ccode'] = a('div.div-map2 span').text()
-                    item['lawuser'] = a('div.div-user2 span').text()
-                    item['etime'] = a('div.div-info-circle2 span').text()
-                    yield item
+                    self.logger.info(str(self.countsucc)+', '+''.join(a('h1').text().split()))
+                    # item['cname'] = ''.join(a('h1').text().split())
+                    # item['status'] = a('div.wrap-corpStatus span').text()
+                    # item['ccode'] = a('div.div-map2 span').text()
+                    # item['lawuser'] = a('div.div-user2 span').text()
+                    # item['etime'] = a('div.div-info-circle2 span').text()
+                    # yield item
             else:
                 print '没有符合的公司'
 

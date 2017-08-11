@@ -9,6 +9,9 @@ def get_userresponse(a, b):
         f = ord(c[e])
         d.append(f - 87 if f > 57 else f - 48)
         e += 1
+    print 'b:', b
+    print 'c:', c
+    print 'd:', d
     c = 36 * d[0] + d[1]
     g = int(round(a) + c)
     b = b[0:32]

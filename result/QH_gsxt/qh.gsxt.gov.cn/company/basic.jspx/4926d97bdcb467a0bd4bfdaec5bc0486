@@ -1,0 +1,255 @@
+治多县中国油品 治多县中国油品
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>company_detail_basic.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+<script src="/javascript/jquery-1.7.js" type="text/javascript"></script>
+
+ <link href="/css/files/companydetail/styles_1.css" type="text/css" rel="stylesheet"/>
+
+	<style type="text/css">
+		#basic{
+			width:1130px;
+			margin:0 auto;
+			overflow:hidden; 
+		}
+		#basic_center{
+			width:60%;
+			min-width:880px;
+		    padding:0px;
+		    margin:10px 0px 0px 0px;
+			overflow:hidden;
+		}
+		#basic_right{
+			float:right;
+		    margin-right:26px;
+			/*background:url(/images/companydetail/u3508.png);*/
+			width:166px;
+			height:144px;
+			color:#FFFFFF;
+		}
+		.fl{
+			float:left;
+		}
+		.br_place{
+			margin-top:8px;
+			text-align:center;
+		}
+		.br_word{
+			font-family:'微软雅黑 Regular', '微软雅黑';
+		    font-weight: 400;
+		    font-style: normal;
+		    font-size: 14px;
+		}
+		.br_img{
+		    position: absolute;
+		    left: 10px;
+		    width: 28px;
+		    height: 21px;
+			vertical-align:middle;
+		}
+		#br_send{
+			position:absolute;
+			float:right;
+			top:190px;
+			width:140px;
+			height:34px;
+			overflow:hidden;
+			background-image:url('/images/companydetail/u2823.png');
+		}
+		#br_share{
+			position:absolute;
+			float:right;
+			top:240px;
+			width:140px;
+			height:34px;
+			overflow:hidden;
+			background-image:url('/images/companydetail/u2821.png');
+		}
+		#br_print{
+			position:absolute;
+			float:right;
+			top:288px;
+			width:140px;
+			height:34px;
+			overflow:hidden;
+			background-image:url('/images/companydetail/u2819.png');
+		}
+		#entName{
+		    font-style: normal;
+		    font-size: 24px;
+		    color: #4E4E4E;
+		    font-family: '微软雅黑 Bold', '微软雅黑';
+		    font-weight: 700;
+		}
+		.sp{
+		   margin-bottom:5px;
+		   margin-top:7px;
+		   height:22px;
+		   display:inline-block;
+		   border-radius:3px;
+		   padding:0px 10px;
+		   padding-top:3px;
+		   margin-left:12px;
+		   margin-right:4px;
+		   color:#FFFFFF;
+		   font-family: '微软雅黑 Regular', '微软雅黑';
+		   font-size:13px;
+		}
+		.basic-info{
+			padding:0px;
+			line-height:26px;
+			font-family: '微软雅黑 Bold', '微软雅黑';
+		    font-weight: 700;
+		    font-style: normal;
+		    color: #545454;
+		    font-size:14px;
+		}
+		.r_3534{
+			cursor:pointer;
+			width:140px;
+			height:36px;
+			margin:7px 10px;
+		}
+		 #biaoji{
+		    cursor:pointer;
+			width:320px;
+			background-color:#F8F8F8;
+			z-index:1024;
+			margin:0px;
+			position:absolute; 
+			margin-left:0px; 
+			margin-top:0px;
+		}
+		.biaoji-p1{
+			font-size:16px;
+			line-height:28px;
+			font-family:'微软雅黑 Bold', '微软雅黑';
+			font-weight:700;
+			font-size:13px;
+			color:#EB5857;
+			line-height:28px;
+			margin:0px;
+			padding-left:9px;
+		}
+		.biaoji-p2{
+			font-family:'微软雅黑 Regular', '微软雅黑';
+			font-weight:400;
+			font-size:13px;
+			color:#333333;
+			line-height:normal;
+			margin:0px;
+			padding-left:9px;
+		} 
+		#biaoji-clear{
+			  position: relative;
+			  left: 200px;
+			  top: 0px;
+			  color:#666666;
+		  }
+		 #zhangtai{
+				 position: relative;
+					  left: 0px;
+					  top: -3px;
+		 }
+		 #biaoji1{
+				 position: relative;
+					  left: 0px;
+					  top: -3px;
+					  cursor:pointer;
+		 }
+		 .label{
+			 font-family: '微软雅黑 Regular', '微软雅黑';
+	   		 font-size: 14px;
+	   		 color:#555555;
+		 }
+		 
+		 #yiYi{
+	  		width:81px;
+	  		height:32px;
+	  		border-radius:5px;
+	  		font-family:'微软雅黑 Bold', '微软雅黑';
+	  		font-weight: 700;
+		    font-style: normal;
+		    font-size: 14px;
+		    background-color:#CA9A37;
+		    display:inline-block;
+		    position: relative;
+		    top: -11px;
+		    left: 0px;
+		    cursor:pointer;
+	  	}
+	</style>
+	 <script type="text/javascript">
+		 $(function(){
+			 $("#biaoji").hide();
+	     })
+     	function showbiaoji(obj){
+					if(obj=="show"){
+						 $("#biaoji").show();
+					}else{
+						$("#biaoji").hide();
+					}
+		     	}
+       
+     </script>
+  </head>
+  <body>
+  <div id="basic">
+		<div id="basic_center"style="margin-left:48px;"class="fl">
+			<div style="margin:21px 0px 0px 2px;">
+				<span id="entName" title="治多县中国油品">
+						治多县中国油品
+                 </span>
+                 
+					<span class="sp fillet" id="zhangtai" style="background-color:#4295E1;">
+				存续（在营、开业、在册）</span> 
+			
+				
+			</div>
+			<div style="height:100px;">
+					<img src="/images/companydetail/u3488.png"/>
+					
+						<div style=" position: relative;left: 28px;top: -106px;">
+							<p>
+									      <span class="basic-info">统一社会信用代码：</span><span class="label">91632724L115048643</span> 
+							</p>
+							<p><span class="basic-info">
+									投资人:
+							 </span>
+							<span class="label">韩国良</span></p>
+							
+							<p><span class="basic-info">登记机关：</span><span class="label">玉树州治多县市场监督管理局</span></p>
+							<p><span class="basic-info">成立日期：</span><span class="label">2013年06月21日</span></p>
+						</div>
+			</div>
+		</div>
+		<div id="basic_right" class="fl">
+			<div id="br_send"  style=" cursor: pointer;" onclick="showMail('show')" class="ax_hot_spot">
+				<div class="br_place">
+					<img class="br_img" src="/images/companydetail/fasong.png"/>
+					<span class="br_word">&nbsp;&nbsp;&nbsp;&nbsp;发送报告</span>
+				</div>
+	      	</div>
+			<div id="br_share" class="ax_hot_spot" style=" cursor: pointer;" onclick="copyUrl()">
+				<div class="br_place">
+					<img class="br_img" src="/images/companydetail/fenxiang.png"/>
+					<span class="br_word">&nbsp;&nbsp;&nbsp;&nbsp;信息分享</span>
+				</div>
+       		</div>
+       		<div id="br_print" class="ax_hot_spot" style=" cursor: pointer;" onclick="printPage()">
+       			<div class="br_place">
+	       			<img class="br_img" src="/images/companydetail/dayin.png"/>
+		       		<span class="br_word">&nbsp;&nbsp;&nbsp;&nbsp;信息打印</span>
+	       		</div>
+       		</div>
+		</div>
+	</div>
+
+  </body>
+</html>
